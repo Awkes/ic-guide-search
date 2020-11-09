@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import styles from './SearchField.module.css';
 import find from '../../images/find.svg';
 
-const SearchField = ({ name, placeholder, value }) => (
+const SearchField = ({ name, onChange, placeholder, value }) => (
   <div className={styles.wrapper}>
     <input 
       className={styles.input} 
       name={name} 
+      onChange={onChange}
       placeholder={placeholder}
-      defaultValue={value} 
+      value={value} 
     />
     <button className={styles.button} type="submit">
       <img src={find} alt="🔍" />
@@ -21,11 +22,13 @@ export default SearchField;
 
 SearchField.propTypes = {
   name: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
   placeholder: PropTypes.string,
   value: PropTypes.string,
 }
 
 SearchField.defaultProps = {
+  onChange: null,
   placeholder: '',
   value: '',
 }
