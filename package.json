@@ -21,7 +21,12 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "indent": ["warn", 2, { "SwitchCase": 1 }],
+      "react/jsx-indent": ["warn", 2],
+      "eol-last": ["warn", "always"]
+    }
   },
   "browserslist": {
     "production": [
