@@ -6,13 +6,18 @@ import find from '../../images/find.svg';
 const SearchField = ({ name, onChange, placeholder, value }) => (
   <div className={styles.wrapper}>
     <input 
+      autoComplete="off"
       className={styles.input} 
       name={name} 
       onChange={onChange}
       placeholder={placeholder}
-      value={value} 
+      value={value}
     />
-    <button className={styles.button} type="submit">
+    <button 
+      className={styles.button} 
+      disabled={!value}
+      type="submit"
+    >
       <img src={find} alt="🔍" />
     </button>
   </div>
