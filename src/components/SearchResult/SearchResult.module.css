@@ -1,0 +1,25 @@
+.link {
+  color: var(--color-text);
+  text-decoration: none;
+  background-color: var(--color-bg-dark);
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.thumb {
+  min-width: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.thumb > img { max-width: 100% }
+
+.text { margin-left: 10px }
+.summary, .lastModified {
+  display: block;
+  margin-top: 10px;
+}
