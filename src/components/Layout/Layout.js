@@ -13,7 +13,9 @@ const Layout = ({ children }) => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <img src={logo} alt="InfoCaption Logo" className={styles.logo} />
+        <div className={styles.headerBlock}>
+          <img src={logo} alt="InfoCaption Logo" className={styles.logo} />
+        </div>
       </header>
       
       <main className={styles.main}>
