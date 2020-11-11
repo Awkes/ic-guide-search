@@ -2,13 +2,21 @@
   --color-primary: #2c94e9;
   --color-secondary: #ffca2e;
   --color-bg-light: #fff;
+  --color-bg-medium: rgba(44,148,233,.05);
+  --color-bg-dark: rgba(44,148,233,.2);
   --color-muted: #bfbfbf;
+  --color-field: #fff;
+  --color-text: #010101;
+  --shadow: 0 5px 5px #eee;
+  --min-width: 320px;
+  --max-width: 1200px;
 }
 
 * { box-sizing: border-box }
 
 body {
   margin: 0;
+  color: var(--color-text);
   background-color: var(--color-bg-light);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

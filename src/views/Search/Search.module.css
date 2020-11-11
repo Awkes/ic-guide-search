@@ -1,0 +1,54 @@
+.formWrapper { background-color: var(--color-secondary) }
+
+.form:not(:focus-within) > .suggestWrapper { display: none }
+
+.form, .results, .pagination, .noResults {
+  margin: 0 auto;
+  max-width: var(--max-width);
+  padding: 50px 25px;
+}
+
+.form > h2 { margin-bottom: 10px }
+
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+}
+
+.results, .pagination { list-style-type: none }
+
+.results > * { margin-bottom: 20px }
+
+.pagination {
+  width: 100%;
+  text-align: center;
+}
+
+.pagination > li { 
+  display: inline-block;
+  padding: 5px;
+}
+
+.pagination > li > a { 
+  display: flex;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-bg-dark);
+  color: var(--color-text);
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  transition: transform .2s;
+}
+
+.pagination > li > a:hover { transform: translateY(-5px) }
+
+.pagination > .active > a {
+  background-color: var(--color-secondary);
+  font-weight: bold;
+}
