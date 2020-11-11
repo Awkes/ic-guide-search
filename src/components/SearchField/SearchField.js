@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './SearchField.module.css';
 import find from '../../images/find.svg';
 
-const SearchField = ({ name, onChange, placeholder, value }) => (
+const SearchField = ({ name, min, onChange, placeholder, value }) => (
   <div className={styles.wrapper}>
     <input 
       autoComplete="off"
@@ -15,7 +15,7 @@ const SearchField = ({ name, onChange, placeholder, value }) => (
     />
     <button 
       className={styles.button} 
-      disabled={!value}
+      disabled={value.length < min}
       type="submit"
     >
       <img src={find} alt="🔍" />
@@ -27,12 +27,14 @@ export default SearchField;
 
 SearchField.propTypes = {
   name: PropTypes.string.isRequired,
+  min: PropTypes.number,
   onChange: PropTypes.func,
   placeholder: PropTypes.string,
   value: PropTypes.string,
 }
 
 SearchField.defaultProps = {
+  min: 1,
   onChange: null,
   placeholder: '',
   value: '',
