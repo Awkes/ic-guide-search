@@ -7,6 +7,6 @@ async function client(endpoint) {
 }
 
 const guideSearch = (query) => client('guidesearch'+query);
-const guideSuggest = (query) => client('suggest'+query);
+const guideSuggest = (query) => client('search/suggest'+query);
 
 export { guideSearch, guideSuggest }
