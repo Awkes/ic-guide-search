@@ -21,7 +21,7 @@ const SearchResults = ({ results, query, totalPages, currentPage }) => {
       );
     }
     return pages;
-  }, [totalPages, currentPage]);
+  }, [totalPages, currentPage, query]);
 
   if (!query.searchQuery) return null;
 
