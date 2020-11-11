@@ -64,26 +64,24 @@ const Search = () => {
   const { currentPage, totalPages, results } = searchResults;
  
   return (
-    <div>
-      <div className={styles.formWrapper}>
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <Heading tag="h2">Sök</Heading>
-          <SearchField
-            name="search"
-            min={2}
-            onChange={handleInput}
-            placeholder="Search ..."          
-            value={searchString}
-          />
+    <div className={styles.wrapper}>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <Heading>Sök</Heading>
+        <SearchField
+          name="search"
+          min={2}
+          onChange={handleInput}
+          placeholder="Search ..."          
+          value={searchString}
+        />
 
-          <div className={styles.suggestWrapper}>
-            <SearchSuggest
-              suggestions={searchSuggest}
-              action={handleSearch}
-            />
-          </div>
-        </form>
-      </div>
+        <div className={styles.suggestWrapper}>
+          <SearchSuggest
+            suggestions={searchSuggest}
+            action={handleSearch}
+          />
+        </div>
+      </form>
 
       {searching ? (
         <div className={styles.spinner}>

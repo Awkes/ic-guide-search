@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import queryString from 'query-string';
 
 import styles from './Search.module.css';
+import searchImage from '../../images/search.svg';
 import SearchResult from '../../components/SearchResult';
 
 const mediaRoot = process.env.REACT_APP_API_MEDIA_URL;
@@ -23,7 +24,13 @@ const SearchResults = ({ results, query, totalPages, currentPage }) => {
     return pages;
   }, [totalPages, currentPage, query]);
 
-  if (!query.searchQuery) return null;
+  if (!query.searchQuery) {
+    return (
+      <div className={styles.searchImage}>
+        <img src={searchImage} alt="Sök" />
+      </div>
+    );
+  }
 
   return (
     results?.length > 0 ? (
@@ -36,7 +43,7 @@ const SearchResults = ({ results, query, totalPages, currentPage }) => {
                 lastModified={lastModifiedDate}
                 summary={summary}
                 url={fullURL}
-                thumbnail={`${mediaRoot}/${thumbnailURL}`}
+                thumbnail={thumbnailURL && `${mediaRoot}/${thumbnailURL}`}
               />
             </li>
           ))}
@@ -69,7 +76,7 @@ SearchResults.propTypes = {
     })
   ),
   query: PropTypes.shape({
-    page: PropTypes.string,
+    page: PropTypes.number,
     searchQuery: PropTypes.string,
   })
 }

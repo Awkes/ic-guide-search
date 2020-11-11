@@ -1,14 +1,22 @@
-.formWrapper { background-color: var(--color-secondary) }
-
-.form:not(:focus-within) > .suggestWrapper { display: none }
-
-.form, .results, .pagination, .noResults {
+.wrapper {
   margin: 0 auto;
+  padding: 0 20px;
   max-width: var(--max-width);
-  padding: 50px 25px;
 }
 
-.form > h2 { margin-bottom: 10px }
+.form { 
+  background-color: var(--color-secondary);
+  background-image: url(../../images/bg-pattern.svg),
+    linear-gradient(transparent,rgba(0,0,0,.2));
+  background-position: center;
+  border-radius: 10px;
+  height: 200px;
+  padding: 50px 30px;
+  box-shadow: var(--shadow);
+}
+
+.form:not(:focus-within) > .suggestWrapper { display: none }
+.form > h1 { margin-bottom: 10px }
 
 .spinner {
   display: flex;
@@ -17,7 +25,13 @@
   padding: 100px 0;
 }
 
-.results, .pagination { list-style-type: none }
+.results, .pagination, .noResults { padding: 50px 25px }
+
+.results, .pagination { 
+  margin: 0;
+  padding: 50px 0;
+  list-style-type: none;
+}
 
 .results > * { margin-bottom: 20px }
 
@@ -51,4 +65,21 @@
 .pagination > .active > a {
   background-color: var(--color-secondary);
   font-weight: bold;
+}
+
+.searchImage { padding: 100px 50px }
+.searchImage > img { 
+  display: block;
+  margin: 0 auto;
+  width: 400px;
+  max-width: 100%; 
+}
+
+.noResults { text-align: center }
+
+@media(min-width: 600px) {
+  .wrapper { padding: 0 50px }
+  .form { padding: 50px }
+  .results, .pagination { padding: 50px 50px }
+  .results > * { margin-bottom: 50px }
 }
