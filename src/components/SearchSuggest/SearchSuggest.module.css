@@ -1,0 +1,33 @@
+.wrapper { position: relative }
+
+.list {
+  position: absolute;
+  list-style-type: none;
+  background-color: var(--color-bg-light);
+  box-shadow: var(--shadow);
+  width: 100%;
+  margin: 5px 0;
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.item > button {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  padding: 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  outline: 0;
+}
+
+.item > button:hover, .item > button:focus {
+  background-color: var(--color-bg-medium);
+}
